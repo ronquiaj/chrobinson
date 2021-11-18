@@ -1,8 +1,8 @@
-import React from "react";
-import "./App.css";
+import React, { FC } from "react";
+import Node from "./components/Node";
 
-function App() {
-  return <h1>CHrobinson</h1>;
-}
+const App: FC = () => {
+  return <></>;
+};
 
 export default App;
