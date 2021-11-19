@@ -1,0 +1,21 @@
+.pathinput {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+
+  span {
+    font-size: 1.75rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &--start {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--destination {
+    display: flex;
+    flex-direction: column;
+  }
+}

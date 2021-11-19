@@ -1,7 +1,9 @@
 import React, { FC, useEffect, useState } from "react";
+import PathInput from "./components/PathInput";
 import Node from "./components/Node";
-import { AdjacencyList } from "./types";
 import bfs from "./utilities/bfs";
+import { AdjacencyList } from "./types";
+import "./styles.scss";
 
 const CountryList: AdjacencyList = {
   CAN: { edges: ["USA"], highlighted: false },
@@ -49,18 +51,12 @@ const App: FC = () => {
   ));
 
   return (
-    <>
-      Start
-      <input onChange={(e) => setStart(e.target.value)} value={start} />
-      Destination
-      <input
-        onChange={(e) => setDestination(e.target.value)}
-        value={destination}
-      />
-      Distance: {distance}
-      <button onClick={() => setCompute(true)}>submit</button>
+    <div className="container">
+      <h1 className="title">Path Finder</h1>
+      <PathInput adjacencyList={adjacencyList} />
+
       {renderedNodes}
-    </>
+    </div>
   );
 };
 
