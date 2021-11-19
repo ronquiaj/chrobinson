@@ -1,3 +1,5 @@
+@import "styles/colors";
+
 .node {
   display: flex;
   justify-content: center;
@@ -5,8 +7,8 @@
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
-  background-color: green;
-  color: white;
+  background-color: $gray;
+  color: $black;
 }
 
 .highlighted {

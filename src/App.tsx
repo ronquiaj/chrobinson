@@ -24,20 +24,21 @@ const App: FC = () => {
   const [compute, setCompute] = useState<boolean>(false);
   const [distance, setDistance] = useState<number>();
 
-  useEffect(() => {
-    console.log("in here");
-    const pathInfo = bfs(adjacencyList, start, destination);
-    setDistance(pathInfo.distance);
-    pathInfo.path.forEach((country) => {
-      setTimeout(() => {
-        setAdjacencyList((oldAdjacencyList) => {
-          oldAdjacencyList[country].highlighted = true;
-          return { ...oldAdjacencyList };
-        });
-      }, 1000);
-    });
-    setCompute(false);
-  }, [compute]);
+  // useEffect(() => {
+  //   console.log("in here");
+
+  //   pathInfo.path.forEach((country) => {
+  //     setTimeout(() => {
+  //       setAdjacencyList((oldAdjacencyList) => {
+  //         oldAdjacencyList[country].highlighted = true;
+  //         return { ...oldAdjacencyList };
+  //       });
+  //     }, 1000);
+  //   });
+  //   setCompute(false);
+  // }, [compute]);
+
+  const pathInfo = bfs(adjacencyList, start, destination);
 
   const renderedNodes = Object.keys(adjacencyList).map((node) => (
     <Node

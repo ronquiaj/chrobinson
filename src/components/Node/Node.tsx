@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import "./styles.css";
+import "./styles.scss";
 
 type Props = { countryName: string; highlighted: boolean };
 

@@ -7,6 +7,8 @@ const bfs = (adjList: AdjacencyList, start: string, destination: string) => {
   const queue: string[] = [];
   const path: string[] = [];
 
+  if (start === destination) return { path: [], distance: 0 };
+
   let totalDistance = -1;
 
   Object.keys(adjList).forEach((country) => {
