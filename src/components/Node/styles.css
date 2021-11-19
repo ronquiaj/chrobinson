@@ -8,3 +8,7 @@
   background-color: green;
   color: white;
 }
+
+.highlighted {
+  border: 0.2rem solid red;
+}

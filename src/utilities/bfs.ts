@@ -25,7 +25,7 @@ const bfs = (adjList: AdjacencyList, start: string, destination: string) => {
         totalDistance = distance[country];
         break;
       }
-      for (const edge of adjList[country]) {
+      for (const edge of adjList[country].edges) {
         if (!visited[edge]) {
           queue.push(edge);
           parent[edge] = country;
