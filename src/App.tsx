@@ -19,7 +19,7 @@ const CountryList: AdjacencyList = {
 const App: FC = () => {
   const [adjacencyList, setAdjacencyList] =
     useState<AdjacencyList>(CountryList);
-  console.log(bfs(adjacencyList, "CAB", "USA"));
+  console.log(bfs(adjacencyList, "USA", "BLZ"));
   return (
     <>
       {Object.keys(adjacencyList).map((node) => (
