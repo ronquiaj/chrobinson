@@ -1,11 +1,10 @@
 import React, { FC, useEffect, useState } from "react";
-import PathInput from "./components/PathInput";
-import Node from "./components/Node";
 import bfs from "./utilities/bfs";
 import { AdjacencyList } from "./types";
 import "./styles.scss";
 import Header from "./components/Header";
 import Button from "./components/Button";
+import Graph from "./components/Graph";
 
 const CountryList: AdjacencyList = {
   CAN: { edges: ["USA"], highlighted: false },
@@ -34,23 +33,13 @@ const App: FC = () => {
     setDistance(pathInfo.distance);
 
     console.log("in here");
-
-    setCompute(false);
   }, [compute]);
-
-  const renderedNodes = Object.keys(adjacencyList).map((node) => (
-    <Node
-      key={node}
-      countryName={node}
-      highlighted={adjacencyList[node].highlighted}
-    />
-  ));
 
   return (
     <div className="container">
       <Header
-      destination={destination}
-      start={start}
+        destination={destination}
+        start={start}
         adjacencyList={adjacencyList}
         setDestination={setDestination}
         setStart={setStart}
@@ -58,7 +47,7 @@ const App: FC = () => {
         path={path}
       />
       <Button buttonText={"Compute"} onClick={() => setCompute(true)} />
-      {renderedNodes}
+      <Graph adjacencyList={adjacencyList} />
     </div>
   );
 };
