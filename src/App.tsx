@@ -29,23 +29,14 @@ const App: FC = () => {
   const [compute, setCompute] = useState<boolean>(false);
   const [distance, setDistance] = useState<number>();
 
-  console.log(destination);
+  useEffect(() => {
+    const pathInfo = bfs(adjacencyList, start, destination);
+    setDistance(pathInfo.distance);
 
-  // useEffect(() => {
-  //   console.log("in here");
+    console.log("in here");
 
-  //   pathInfo.path.forEach((country) => {
-  //     setTimeout(() => {
-  //       setAdjacencyList((oldAdjacencyList) => {
-  //         oldAdjacencyList[country].highlighted = true;
-  //         return { ...oldAdjacencyList };
-  //       });
-  //     }, 1000);
-  //   });
-  //   setCompute(false);
-  // }, [compute]);
-
-  const pathInfo = bfs(adjacencyList, start, destination);
+    setCompute(false);
+  }, [compute]);
 
   const renderedNodes = Object.keys(adjacencyList).map((node) => (
     <Node
@@ -58,13 +49,15 @@ const App: FC = () => {
   return (
     <div className="container">
       <Header
+      destination={destination}
+      start={start}
         adjacencyList={adjacencyList}
         setDestination={setDestination}
         setStart={setStart}
         distance={distance}
         path={path}
       />
-      <Button buttonText={"Compute"} onClick={() => alert("hi")} />
+      <Button buttonText={"Compute"} onClick={() => setCompute(true)} />
       {renderedNodes}
     </div>
   );

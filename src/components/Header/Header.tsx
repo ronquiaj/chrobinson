@@ -9,6 +9,8 @@ type Props = {
   setDestination: Dispatch<SetStateAction<string>>;
   setStart: Dispatch<SetStateAction<string>>;
   distance: number | undefined;
+  start: string;
+  destination: string;
   path: string[];
   adjacencyList: AdjacencyList;
 };
@@ -19,6 +21,8 @@ const Header: FC<Props> = ({
   adjacencyList,
   distance,
   path,
+  destination,
+  start,
 }: Props) => {
   return (
     <>
@@ -27,9 +31,11 @@ const Header: FC<Props> = ({
       <div className="row">
         <PathContainer path={path} />
         <PathInput
+          destination={destination}
           destinationOnChange={setDestination}
           startOnChange={setStart}
           adjacencyList={adjacencyList}
+          start={start}
         />
         <DistanceContainer distance={distance} />
       </div>
