@@ -1,0 +1,14 @@
+@import "styles/colors";
+@import "styles/font";
+
+.button {
+  font-size: 2rem;
+  background-color: $gray;
+  color: $black;
+  height: 2.5rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border: 0.25px solid $black;
+  cursor: pointer;
+  user-select: none;
+}

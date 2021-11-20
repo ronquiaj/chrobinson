@@ -4,6 +4,8 @@ import Node from "./components/Node";
 import bfs from "./utilities/bfs";
 import { AdjacencyList } from "./types";
 import "./styles.scss";
+import Header from "./components/Header";
+import Button from "./components/Button";
 
 const CountryList: AdjacencyList = {
   CAN: { edges: ["USA"], highlighted: false },
@@ -23,8 +25,11 @@ const App: FC = () => {
     useState<AdjacencyList>(CountryList);
   const [start, setStart] = useState<string>("USA");
   const [destination, setDestination] = useState<string>("PAN");
+  const [path, setPath] = useState<string[]>([]);
   const [compute, setCompute] = useState<boolean>(false);
   const [distance, setDistance] = useState<number>();
+
+  console.log(destination);
 
   // useEffect(() => {
   //   console.log("in here");
@@ -52,9 +57,14 @@ const App: FC = () => {
 
   return (
     <div className="container">
-      <h1 className="title">Path Finder</h1>
-      <PathInput adjacencyList={adjacencyList} />
-
+      <Header
+        adjacencyList={adjacencyList}
+        setDestination={setDestination}
+        setStart={setStart}
+        distance={distance}
+        path={path}
+      />
+      <Button buttonText={"Compute"} onClick={() => alert("hi")} />
       {renderedNodes}
     </div>
   );

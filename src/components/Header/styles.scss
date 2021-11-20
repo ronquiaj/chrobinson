@@ -1,0 +1,24 @@
+@import "styles/colors";
+
+.title {
+  font-size: 4rem;
+  margin: 1.75rem 0 0 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.subheader {
+  color: $gray;
+  font-size: 1.3rem;
+  margin: 0.5rem 0 1.5rem 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0.5rem 0 2rem 0;
+}
