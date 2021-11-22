@@ -4,7 +4,11 @@ import "./styles.scss";
 type Props = { path: string[] };
 
 const PathContainer: FC<Props> = ({ path }: Props) => {
-  return <div className="path">Path: {path}</div>;
+  return (
+    <div className="path">
+      Path: <span className="path--countries">{path.join(", ")}</span>
+    </div>
+  );
 };
 
 export default PathContainer;

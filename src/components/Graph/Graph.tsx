@@ -20,10 +20,10 @@ const Graph: FC<Props> = ({ adjacencyList }: Props) => {
       graph[country] = { highlighted: false, x, y };
       x += Math.floor(Math.random() * 100) + 300;
       if (x + RADIUS >= WIDTH - RADIUS) {
-        y += Math.floor(Math.random() * 50) + 100;
+        y += Math.floor(Math.random() * 50) + 200;
         x = Math.floor(Math.random() * 100) + 50;
       }
-      if (y + RADIUS >= HEIGHT) HEIGHT += RADIUS + 50;
+      if (y + RADIUS >= HEIGHT) HEIGHT += RADIUS + 100;
     }
   });
 

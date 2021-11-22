@@ -31,6 +31,7 @@ const App: FC = () => {
   useEffect(() => {
     const pathInfo = bfs(adjacencyList, start, destination);
     setDistance(pathInfo.distance);
+    setPath(pathInfo.path);
 
     console.log("in here");
     setCompute(false);
