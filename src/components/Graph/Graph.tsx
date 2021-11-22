@@ -2,7 +2,7 @@ import React, { FC, useEffect, useRef } from "react";
 import { AdjacencyList, GraphType } from "../../types";
 import "./styles.scss";
 
-const WIDTH = window.innerWidth / 1.2;
+const WIDTH = window.innerWidth / 1.5;
 let HEIGHT = window.outerHeight / 2;
 const RADIUS = 30;
 
@@ -41,10 +41,14 @@ const Graph: FC<Props> = ({ adjacencyList }: Props) => {
       radius: number
     ) => {
       if (context) {
+        context.font = "bold 1rem serif";
         context.beginPath();
         context.textAlign = "center";
         context.arc(x + radius, y + radius, radius, 0, 2 * Math.PI);
         context.stroke();
+        context.fillStyle = "gray";
+        context.fill();
+        context.fillStyle = "black";
         context.fillText(text, x + radius, y + radius);
       }
     };
