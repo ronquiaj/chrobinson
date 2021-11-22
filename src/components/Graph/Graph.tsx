@@ -147,13 +147,23 @@ const Graph: FC<Props> = ({ adjacencyList, path }: Props) => {
         x: null,
         y: null,
       };
-      path.forEach((country) => {
-        const { x, y } = graph[country];
-        createNode(context, country, x, y, RADIUS, "lightgreen", "white");
-        if (lastNode.x && lastNode.y) {
-          drawLine(context, lastNode.x, lastNode.y, x, y, RADIUS, "lightgreen");
-        }
-        lastNode = { x, y };
+      path.forEach((country, time) => {
+        setTimeout(() => {
+          const { x, y } = graph[country];
+          createNode(context, country, x, y, RADIUS, "lightgreen", "white");
+          if (lastNode.x && lastNode.y) {
+            drawLine(
+              context,
+              lastNode.x,
+              lastNode.y,
+              x,
+              y,
+              RADIUS,
+              "lightgreen"
+            );
+          }
+          lastNode = { x, y };
+        }, 400 * time);
       });
     }
   }, [path, adjacencyList, resetGraph]);
