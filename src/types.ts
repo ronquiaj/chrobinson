@@ -5,5 +5,5 @@ export type AdjacencyList = {
 };
 
 export type GraphType = {
-  [key: string]: { x: number; y: number; highlighted: boolean };
+  [key: string]: { x: number; y: number };
 };

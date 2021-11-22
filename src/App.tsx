@@ -32,10 +32,8 @@ const App: FC = () => {
     const pathInfo = bfs(adjacencyList, start, destination);
     setDistance(pathInfo.distance);
     setPath(pathInfo.path);
-
-    console.log("in here");
     setCompute(false);
-  }, [compute]);
+  }, [compute, adjacencyList]);
 
   return (
     <div className="container">
@@ -49,7 +47,7 @@ const App: FC = () => {
         path={path}
       />
       <Button buttonText={"Compute"} onClick={() => setCompute(true)} />
-      <Graph adjacencyList={adjacencyList} />
+      <Graph adjacencyList={adjacencyList} path={path} />
     </div>
   );
 };

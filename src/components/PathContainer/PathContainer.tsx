@@ -6,7 +6,10 @@ type Props = { path: string[] };
 const PathContainer: FC<Props> = ({ path }: Props) => {
   return (
     <div className="path">
-      Path: <span className="path--countries">{path.join(", ")}</span>
+      Path:{" "}
+      <span className="path--countries">
+        {path.length === 0 ? "None" : path.join(", ")}
+      </span>
     </div>
   );
 };
