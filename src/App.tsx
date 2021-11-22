@@ -7,16 +7,16 @@ import Button from "./components/Button";
 import Graph from "./components/Graph";
 
 const CountryList: AdjacencyList = {
-  CAN: { edges: ["USA"], highlighted: false },
-  USA: { edges: ["CAN", "MEX"], highlighted: false },
-  MEX: { edges: ["USA", "BLZ", "GTM"], highlighted: false },
-  GTM: { edges: ["MEX", "BLZ", "SLV", "HND"], highlighted: false },
-  BLZ: { edges: ["MEX", "GTM"], highlighted: false },
-  SLV: { edges: ["GTM", "HND"], highlighted: false },
-  HND: { edges: ["NIC", "GTM", "SLV"], highlighted: false },
-  NIC: { edges: ["HND", "CRI"], highlighted: false },
-  CRI: { edges: ["NIC", "PAN"], highlighted: false },
-  PAN: { edges: ["CRI"], highlighted: false },
+  CAN: { edges: ["USA"] },
+  USA: { edges: ["CAN", "MEX"] },
+  MEX: { edges: ["USA", "BLZ", "GTM"] },
+  GTM: { edges: ["MEX", "BLZ", "SLV", "HND"] },
+  BLZ: { edges: ["MEX", "GTM"] },
+  SLV: { edges: ["GTM", "HND"] },
+  HND: { edges: ["NIC", "GTM", "SLV"] },
+  NIC: { edges: ["HND", "CRI"] },
+  CRI: { edges: ["NIC", "PAN"] },
+  PAN: { edges: ["CRI"] },
 };
 
 const App: FC = () => {
@@ -33,6 +33,7 @@ const App: FC = () => {
     setDistance(pathInfo.distance);
 
     console.log("in here");
+    setCompute(false);
   }, [compute]);
 
   return (
